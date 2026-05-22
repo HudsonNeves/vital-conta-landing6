@@ -1,0 +1,28 @@
+:root {
+  --primary: #0F2A44;
+  --white: #FFFFFF;
+  --gray-dark: #3B4A5A;
+  --gray-light: #EEF2F6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--primary);
+  padding-top: 70px;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
