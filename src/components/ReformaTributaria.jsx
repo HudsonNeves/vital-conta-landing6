@@ -5,27 +5,27 @@ function ReformaTributaria() {
     <section className="tax-reform" id="reforma-tributaria">
       <div className="container">
         <div className="tax-card">
-          <div>
+          <div className="tax-card-intro">
             <span className="tax-badge">Destaque</span>
-            <h2>Reforma tributária: sua empresa está preparada para essa mudança?</h2>
+            <h2>Reforma tributaria: sua empresa esta preparada para essa mudanca?</h2>
             <p>
-              A Vital Conta ajuda você a entender o que muda, como ajustar sua estrutura fiscal
-              e quais decisões precisam ser tomadas agora para continuar crescendo com segurança.
+              A Vital Conta ajuda voce a entender os impactos das novas regras, revisar sua
+              estrutura fiscal e planejar os proximos passos com seguranca.
             </p>
           </div>
 
           <div className="tax-list">
             <div>
-              <strong>Prepare sua empresa</strong>
-              <p>Veja o impacto das novas regras nos impostos, no preço e no fluxo de caixa.</p>
+              <strong>Impactos no negocio</strong>
+              <p>Analise reflexos nos impostos, precos, contratos e fluxo de caixa.</p>
             </div>
             <div>
-              <strong>Faturamento acima do teto?</strong>
-              <p>Parabéns. Sua empresa já exige uma estrutura fiscal mais robusta para seguir crescendo sem burocracia.</p>
+              <strong>Enquadramento tributario</strong>
+              <p>Verifique se o regime atual ainda acompanha o momento da empresa.</p>
             </div>
             <div>
-              <strong>Adequação com segurança</strong>
-              <p>Organizamos a transição para reduzir riscos, evitar multas e manter sua operação em dia.</p>
+              <strong>Adequacao com seguranca</strong>
+              <p>Organize a transicao para reduzir riscos, evitar multas e manter a operacao em dia.</p>
             </div>
           </div>
         </div>

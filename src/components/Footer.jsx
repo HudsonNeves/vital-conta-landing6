@@ -15,7 +15,7 @@ function Footer() {
         <div className="footer-contact">
           <h4>Contato</h4>
           <p>WhatsApp: (61) 99692-1053</p>
-          <p>Email: contato@vitalconta.com</p>
+          <p>Email: vitalcontacontabilidade@gmail.com</p>
           <p>Instagram: @vital.conta_</p>
         </div>
 

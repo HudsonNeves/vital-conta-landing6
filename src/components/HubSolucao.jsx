@@ -15,7 +15,7 @@ function HubSolucao() {
       id: 2,
       title: 'Impostos e Burocracia Fiscal',
       problem: 'Sinto que trabalho para pagar impostos e ainda corro o risco de ser multado por algum erro que nem entendo.',
-      solution: 'Nós traduzimos toda a parte chata da contabilidade e garantimos que sua empresa pague o mínimo possível dentro da lei, sem surpresas no fim do mês.'
+      solution: 'Simplificamos a rotina contábil e tributária para manter sua empresa em conformidade, reduzir riscos e identificar oportunidades legais de economia.'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ function HubSolucao() {
       id: 4,
       title: 'Gestão do Tempo e Operação',
       problem: 'Gasto horas com papelada e tarefas manuais que não trazem um centavo de crescimento para o meu negócio.',
-      solution: 'Substituímos o trabalho braçal por processos inteligentes. Automatizamos sua rotina para que o seu tempo seja investido em estratégia, e não em preencher planilhas.'
+      solution: 'Reestruturamos tarefas operacionais manuais com processos inteligentes, para que seu tempo seja direcionado à estratégia e à gestão do crescimento.'
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ function HubSolucao() {
       id: 9,
       title: 'Autonomia da Operação',
       problem: 'Sinto que a empresa só funciona se eu estiver olhando. Se eu me afasto por um dia, as tarefas param, os prazos vencem e a equipe fica perdida.',
-      solution: "Criamos a 'bíblia' da sua operação. Mapeamos processos para que cada tarefa tenha um dono e um jeito certo de ser feita. Sua empresa para de depender da sua memória e passa a rodar com autonomia."
+      solution: 'Estruturamos a documentação operacional da sua empresa. Mapeamos processos, responsáveis e padrões de execução para que a rotina funcione com mais autonomia.'
     },
     {
       id: 10,
@@ -70,6 +70,12 @@ function HubSolucao() {
       title: 'Comunicação e Gestão de Conflitos',
       problem: 'Minha equipe bate cabeça, as informações se perdem no caminho e o clima fica pesado por causa de fofocas ou erros de interpretação.',
       solution: 'Alinhamento total. Implementamos canais e métodos de comunicação claros, treinando sua liderança para resolver conflitos de forma profissional e manter o ambiente focado em soluções.'
+    },
+    {
+      id: 12,
+      title: 'Planejamento e Indicadores',
+      problem: 'Tenho metas para crescer, mas não consigo acompanhar se a empresa está avançando na direção certa.',
+      solution: 'Definimos indicadores práticos e uma rotina de acompanhamento para transformar metas em decisões mensuráveis, com visão clara de desempenho, prioridades e próximos passos.'
     }
   ]
 
@@ -82,7 +88,7 @@ function HubSolucao() {
       <div className="container">
         <h2>Hub de Soluções</h2>
         <p className="solution-subtitle">
-          De um lado a dor. Do outro, a solução para o seu negócio crescer com mais controle.
+          Explore os principais desafios da gestão empresarial e veja como a Vital Conta transforma cada ponto crítico em organização, controle e crescimento.
         </p>
 
         <div className="hub-grid">
@@ -117,7 +123,6 @@ function HubSolucao() {
                     <span className="hub-card-label hub-card-label-light">A solução</span>
                     <div className="hub-card-back-title">{card.title}</div>
                     <div className="hub-card-solution">{card.solution}</div>
-                    <span className="btn-small hub-card-cta hub-card-cta-light">Voltar ao problema</span>
                   </div>
                 </div>
               </div>

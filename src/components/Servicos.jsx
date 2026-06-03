@@ -12,11 +12,11 @@ function Servicos() {
       ]
     },
     {
-      titulo: 'Eu perco muito tempo com notas e impostos',
-      descricao: 'Recursos práticos para simplificar sua operação e reduzir erros.',
+      titulo: 'Eu perco muito tempo com impostos e obrigações digitais',
+      descricao: 'Recursos práticos para simplificar rotinas fiscais, acessos e entregas obrigatórias.',
       itens: [
         'Controle simples de notas fiscais',
-        'Suporte com certificado digital'
+        'Orientação para uso do certificado digital'
       ]
     },
     {
