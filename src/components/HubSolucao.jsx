@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../styles/sections.css'
+import { trackEvent } from '../utils/analytics'
 
 function HubSolucao() {
   const [flipped, setFlipped] = useState(null)
@@ -58,28 +59,15 @@ function HubSolucao() {
       title: 'Autonomia da Operação',
       problem: 'Sinto que a empresa só funciona se eu estiver olhando. Se eu me afasto por um dia, as tarefas param, os prazos vencem e a equipe fica perdida.',
       solution: 'Estruturamos a documentação operacional da sua empresa. Mapeamos processos, responsáveis e padrões de execução para que a rotina funcione com mais autonomia.'
-    },
-    {
-      id: 10,
-      title: 'Custos e Precificação',
-      problem: 'Trabalho muito, fecho muitos contratos, mas parece que nunca sobra dinheiro. Tenho a sensação de que estou pagando para trabalhar ou que meu preço está errado.',
-      solution: 'Lucro real no bolso. Analisamos seus custos escondidos e estruturamos uma tabela de preços estratégica para você saber exatamente quanto cobrar e garantir a margem que seu esforço merece.'
-    },
-    {
-      id: 11,
-      title: 'Comunicação e Gestão de Conflitos',
-      problem: 'Minha equipe bate cabeça, as informações se perdem no caminho e o clima fica pesado por causa de fofocas ou erros de interpretação.',
-      solution: 'Alinhamento total. Implementamos canais e métodos de comunicação claros, treinando sua liderança para resolver conflitos de forma profissional e manter o ambiente focado em soluções.'
-    },
-    {
-      id: 12,
-      title: 'Planejamento e Indicadores',
-      problem: 'Tenho metas para crescer, mas não consigo acompanhar se a empresa está avançando na direção certa.',
-      solution: 'Definimos indicadores práticos e uma rotina de acompanhamento para transformar metas em decisões mensuráveis, com visão clara de desempenho, prioridades e próximos passos.'
     }
   ]
 
   const toggleCard = (id) => {
+    const card = cards.find((item) => item.id === id)
+    trackEvent('hub_solution_toggle', {
+      card_name: card?.title,
+      action: flipped === id ? 'close' : 'open'
+    })
     setFlipped(flipped === id ? null : id)
   }
 
@@ -102,7 +90,6 @@ function HubSolucao() {
                 onClick={() => toggleCard(card.id)}
                 role="button"
                 tabIndex={0}
-                aria-label={`${isFlipped ? 'Voltar para o problema' : 'Ver solução'}: ${card.title}`}
                 aria-expanded={isFlipped}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -114,14 +101,11 @@ function HubSolucao() {
                 <div className="flip-card-inner">
                   <div className="flip-card-face flip-card-front">
                     <div className="hub-card-title">{card.title}</div>
-                    <span className="hub-card-label">O problema</span>
                     <div className="hub-card-problem">{card.problem}</div>
                     <span className="btn-small hub-card-cta">Ver solução</span>
                   </div>
 
                   <div className="flip-card-face flip-card-back">
-                    <span className="hub-card-label hub-card-label-light">A solução</span>
-                    <div className="hub-card-back-title">{card.title}</div>
                     <div className="hub-card-solution">{card.solution}</div>
                   </div>
                 </div>

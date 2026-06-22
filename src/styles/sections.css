@@ -45,8 +45,8 @@
 
 .problem-icon img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -63,6 +63,16 @@
 @media (max-width: 768px) {
   .problem-grid {
     grid-template-columns: 1fr;
+  }
+
+  .problem-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .problem-card p {
+    font-size: 0.9rem;
+    line-height: 1.45;
   }
 }
 /* SOLUTION SECTION */
@@ -443,19 +453,6 @@
   font-size: 1.05rem;
 }
 
-.hub-card-label {
-  color: #16A34A;
-  font-weight: 800;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.hub-card-label-light {
-  color: #86EFAC;
-}
-
 .hub-card-problem {
   color: var(--gray-dark);
   font-size: 0.98rem;
@@ -477,12 +474,6 @@
   background: var(--primary);
   color: #fff;
   cursor: pointer;
-}
-
-.hub-card-back-title {
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 1.05rem;
 }
 
 .hub-card-solution {
@@ -786,7 +777,7 @@
 
 .about-kicker {
   display: inline-flex;
-  color: #16A34A;
+  color: #166534;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -805,7 +796,7 @@
   max-width: 420px;
   height: auto;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
 }
 

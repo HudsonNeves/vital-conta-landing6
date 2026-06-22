@@ -148,7 +148,7 @@
   padding: 10px 18px;
   border-radius: 20px;
   border: none;
-  background: #22C55E;
+  background: var(--brand-action);
   color: #FFFFFF;
   cursor: pointer;
   transition: 0.3s;
@@ -156,7 +156,7 @@
 }
 
 .header-actions button:hover {
-  background: #16A34A;
+  background: var(--brand-action-hover);
   transform: translateY(-2px);
 }
 

@@ -1,4 +1,4 @@
-# Vital Conta Landing
+# vital-conta-landing6 | Vital Conta
 
 Landing page institucional da Vital Conta, desenvolvida com React e Vite.
 
@@ -40,7 +40,7 @@ npm run dev
 Acesse no navegador o endereco exibido pelo Vite. Em geral:
 
 ```text
-http://localhost:5173/vital-conta-landing5/
+http://localhost:5173/vital-conta-landing6/
 ```
 
 ## Scripts
@@ -64,13 +64,13 @@ npm run deploy
 O projeto esta configurado para GitHub Pages:
 
 ```text
-https://hudsonneves.github.io/vital-conta-landing5/
+https://hudsonneves.github.io/vital-conta-landing6/
 ```
 
 Repositorio:
 
 ```text
-https://github.com/HudsonNeves/vital-conta-landing5
+https://github.com/HudsonNeves/vital-conta-landing6
 ```
 
 Antes de publicar, gere o build:
@@ -114,4 +114,27 @@ src/
 
 ## Observacoes
 
-O `base` do Vite esta configurado como `/vital-conta-landing5/` em `vite.config.js`, adequado para publicacao no GitHub Pages deste repositorio.
+O `base` do Vite esta configurado como `/vital-conta-landing6/` em `vite.config.js`, adequado para publicacao no GitHub Pages deste repositorio.
+
+## Google Analytics 4
+
+Crie um arquivo `.env` a partir do `.env.example` e informe o ID da propriedade:
+
+```env
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+O formulário de diagnóstico envia os dados diretamente para `professorhnsilva@gmail.com` usando FormSubmit.
+
+A integracao registra:
+
+- `page_view`: visualizacao da pagina inicial, cursos e diagnostico.
+- `scroll_depth`: profundidade de 25%, 50%, 75% e 90%.
+- `engagement_time`: permanencia de 30, 60 e 120 segundos.
+- `whatsapp_click`: clique no WhatsApp, identificado pela origem.
+- `diagnosis_cta_click`: clique em Solicitar Analise.
+- `diagnosis_submit`: envio do formulario de diagnostico.
+- `courses_click`: acesso a area de cursos pelo menu.
+- `hub_solution_toggle`: abertura ou fechamento de um card do Hub de Solucoes.
+
+No painel do GA4, marque `whatsapp_click`, `diagnosis_cta_click`, `diagnosis_submit` e `courses_click` como eventos principais para acompanhar conversoes.

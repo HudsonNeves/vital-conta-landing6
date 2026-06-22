@@ -2,13 +2,18 @@ import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import { courses } from '../data/courses'
 import '../styles/courses.css'
+import { trackEvent } from '../utils/analytics'
+
+const courseCategories = ['Gestão', 'Financeiro', 'Pessoas', 'Comercial']
 
 function Cursos({ highlightedCourse }) {
   const whatsappNumber = '5561996921053'
 
   const openCourseWhatsApp = (courseTitle = 'Cursos e Treinamentos') => {
+    trackEvent('whatsapp_click', { location: 'courses', course_name: courseTitle })
     const message = encodeURIComponent(`Olá, tenho interesse em saber mais sobre: ${courseTitle}.`)
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank')
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`
+    window.location.href = whatsappUrl
   }
 
   useEffect(() => {
@@ -42,7 +47,7 @@ function Cursos({ highlightedCourse }) {
 
             <div className="courses-panel" aria-label="Resumo dos treinamentos">
               <div>
-                <strong>11</strong>
+                <strong>12</strong>
                 <span>temas disponíveis</span>
               </div>
               <div>
@@ -64,26 +69,50 @@ function Cursos({ highlightedCourse }) {
               <h2>Escolha o tema mais aderente ao momento da sua empresa</h2>
             </div>
 
-            <div className="courses-grid">
-              {courses.map((course) => (
-                <article
-                  className={`course-card ${highlightedCourse === course.slug ? 'is-highlighted' : ''}`}
-                  id={`curso-${course.slug}`}
-                  key={course.slug}
-                >
-                  <span className="course-category">{course.category}</span>
-                  <h3>{course.title}</h3>
-                  <p>{course.description}</p>
-                  <ul>
-                    {course.topics.map((topic) => (
-                      <li key={topic}>{topic}</li>
+            <div className="courses-categories">
+              {courseCategories.map((category) => (
+                <section className="courses-category-group" key={category}>
+                  <div className="courses-category-heading">
+                    <span>Categoria</span>
+                    <h3>{category}</h3>
+                  </div>
+
+                  <div className="courses-grid">
+                    {courses.filter((course) => course.category === category).map((course) => (
+                      <article
+                        className={`course-card ${highlightedCourse === course.slug ? 'is-highlighted' : ''}`}
+                        id={`curso-${course.slug}`}
+                        key={course.slug}
+                      >
+                        <h3>{course.title}</h3>
+                        <p>{course.description}</p>
+                        <ul>
+                          {course.topics.map((topic) => (
+                            <li key={topic}>{topic}</li>
+                          ))}
+                        </ul>
+                        <button type="button" onClick={() => openCourseWhatsApp(course.title)}>
+                          Tenho interesse
+                        </button>
+                      </article>
                     ))}
-                  </ul>
-                  <button type="button" onClick={() => openCourseWhatsApp(course.title)}>
-                    Tenho interesse
-                  </button>
-                </article>
+                  </div>
+                </section>
               ))}
+            </div>
+
+            <div className="courses-custom-cta">
+              <div>
+                <span>Treinamento sob medida</span>
+                <h2>Não encontrou o treinamento ideal?</h2>
+                <p>Conte para nossa equipe o que sua empresa precisa desenvolver.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => openCourseWhatsApp('Treinamento personalizado')}
+              >
+                Solicitar Treinamento Personalizado
+              </button>
             </div>
           </div>
         </section>

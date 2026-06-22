@@ -8,23 +8,31 @@ function Problema() {
   const cards = [
     {
       image: complexidade,
+      width: 800,
+      height: 430,
       titulo: 'Impostos e prazos geram insegurança',
-      descricao: 'Quando as obrigações se acumulam, fica difícil saber o que pagar, quando entregar e como evitar erros.'
+      descricao: 'Obrigações acumuladas deixam o fluxo confuso e tornam difícil pagar no prazo certo.'
     },
     {
       image: lucros,
-      titulo: 'Clareza sobre receitas, gastos e resultados',
-      descricao: 'Com controles organizados, você entende o que entra, o que sai e o que realmente sobra no negócio.'
+      width: 800,
+      height: 284,
+      titulo: 'Falta de visibilidade financeira',
+      descricao: 'Sem controles precisos, você não sabe onde o dinheiro entra, sai e como proteger sua margem.'
     },
     {
       image: controle,
-      titulo: 'A papelada consome tempo e energia',
-      descricao: 'Documentos soltos e processos manuais travam a rotina e tiram você das decisões mais importantes.'
+      width: 800,
+      height: 279,
+      titulo: 'A burocracia drena sua rotina',
+      descricao: 'Fluxos manuais e papelada desorganizada fazem você perder tempo e energia em tarefas operacionais.'
     },
     {
       image: tempo,
-      titulo: 'Processos claros para decidir melhor',
-      descricao: 'Com orientação prática, sua empresa ganha método, previsibilidade e mais segurança para avançar.'
+      width: 800,
+      height: 339,
+      titulo: 'Decisões mais seguras com processos',
+      descricao: 'Passos claros e práticos deixam a gestão mais previsível e reduzem erros na tomada de decisão.'
     }
   ]
 
@@ -43,7 +51,14 @@ function Problema() {
           {cards.map((item, index) => (
             <div key={index} className="problem-card">
               <div className="problem-icon">
-                <img src={item.image} alt={item.titulo} />
+                <img
+                  src={item.image}
+                  alt={item.titulo}
+                  width={item.width}
+                  height={item.height}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h3>{item.titulo}</h3>
               <p>{item.descricao}</p>

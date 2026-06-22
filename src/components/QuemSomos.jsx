@@ -41,7 +41,14 @@ function QuemSomos() {
           </div>
 
           <div className="about-image">
-            <img src={equipeFoto} alt="Equipe Vital Conta" />
+            <img
+              src={equipeFoto}
+              alt="Equipe Vital Conta"
+              width="896"
+              height="1195"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 

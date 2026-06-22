@@ -1,11 +1,23 @@
 import '../styles/hero.css'
+import { trackEvent } from '../utils/analytics'
 
-function Hero() {
+function Hero({ navigateDiagnosis }) {
   const handleClick = () => {
-    const section = document.getElementById('cta-final')
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
+    trackEvent('diagnosis_cta_click', { location: 'hero' })
+    if (navigateDiagnosis) {
+      navigateDiagnosis()
+    } else {
+      window.location.hash = '/diagnostico'
     }
+  }
+
+  const handleWhatsApp = () => {
+    trackEvent('whatsapp_click', { location: 'hero' })
+    window.open(
+      'https://wa.me/5561996921053?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20da%20Vital%20Conta.',
+      '_blank',
+      'noopener,noreferrer'
+    )
   }
 
   return (
@@ -25,11 +37,11 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <button className="btn" onClick={handleClick}>
+            <button className="btn" type="button" onClick={handleClick}>
               Solicitar análise gratuita
             </button>
 
-            <button className="btn btn-secondary">
+            <button className="btn btn-secondary" type="button" onClick={handleWhatsApp}>
               Falar com especialista
             </button>
           </div>

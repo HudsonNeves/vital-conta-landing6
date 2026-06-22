@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import logo from '../assets/logo.png'
+import logo from '../assets/optimized/logo.webp'
 import '../styles/header.css'
+import { trackEvent } from '../utils/analytics'
 
 function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -31,7 +32,7 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
     ]
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50 || currentPage === 'courses')
+      setScrolled(window.scrollY > 50 || currentPage !== 'home')
 
       if (currentPage === 'courses') {
         setActive('cursos')
@@ -56,6 +57,17 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [currentPage])
 
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    const closeMenuOnEscape = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', closeMenuOnEscape)
+    return () => window.removeEventListener('keydown', closeMenuOnEscape)
+  }, [menuOpen])
+
   const scrollToSection = (id) => {
     if (currentPage !== 'home' && navigateHome) {
       navigateHome(id)
@@ -78,6 +90,7 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
   }
 
   const openWhatsApp = (message) => {
+    trackEvent('whatsapp_click', { location: 'header' })
     const text = message ? encodeURIComponent(message) : ''
     if (whatsappNumber) {
       const url = `https://wa.me/${whatsappNumber}?text=${text}`
@@ -94,6 +107,7 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
   }
 
   const openCoursesPage = (courseSlug = '') => {
+    trackEvent('courses_click', { location: 'header' })
     if (navigateCourses) {
       navigateCourses(courseSlug)
     }
@@ -105,7 +119,7 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-container">
         <button type="button" className="logo" onClick={() => scrollToSection('hero')} aria-label="Ir para o início">
-          <img src={logo} alt="Vital Conta" />
+          <img src={logo} alt="Vital Conta" width="220" height="84" />
         </button>
 
         <nav className={`nav ${menuOpen ? 'active' : ''}`} aria-label="Navegação principal">
@@ -149,7 +163,7 @@ function Header({ currentPage = 'home', navigateCourses, navigateHome }) {
         <button
           type="button"
           className="menu-toggle"
-          aria-label="Abrir menu"
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >

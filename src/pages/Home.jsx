@@ -12,21 +12,23 @@ import ProvaSocial from '../components/ProvaSocial'
 import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 
-function Home({ showHeader = true }) {
+function Home({ showHeader = true, navigateDiagnosis }) {
   return (
     <>
       {showHeader && <Header />}
-      <Hero />
-      <Problema />
-      <Solucao />
-      <HubSolucao />
-      <Metodo />
-      <Servicos />
-      <ReformaTributaria />
-      <Beneficios />
-      <ProvaSocial />
-      <CTA />
-      <QuemSomos />
+      <main>
+        <Hero navigateDiagnosis={navigateDiagnosis} />
+        <Problema />
+        <Solucao />
+        <HubSolucao />
+        <Metodo />
+        <Servicos />
+        <ReformaTributaria />
+        <Beneficios />
+        <ProvaSocial />
+        <CTA />
+        <QuemSomos />
+      </main>
       <Footer />
     </>
   )

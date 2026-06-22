@@ -1,7 +1,9 @@
 import '../styles/sections.css'
+import { trackEvent } from '../utils/analytics'
 
 function CTA() {
   const handleWhatsApp = () => {
+    trackEvent('whatsapp_click', { location: 'final_cta' })
     window.open('https://wa.me/5561996921053', '_blank')
   }
 

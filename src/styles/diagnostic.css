@@ -1,0 +1,195 @@
+.diagnostic-page {
+  min-height: calc(100vh - 70px);
+  background: #F7FAFC;
+}
+
+.diagnostic-section {
+  padding-top: 72px;
+  padding-bottom: 96px;
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(560px, 1.15fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.diagnostic-intro {
+  position: sticky;
+  top: 110px;
+  text-align: left;
+}
+
+.diagnostic-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #16A34A;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.diagnostic-intro h1 {
+  max-width: 14ch;
+  margin-bottom: 24px;
+  color: #0F2A44;
+  font-size: clamp(2.35rem, 5vw, 4.4rem);
+  line-height: 1.03;
+}
+
+.diagnostic-intro p {
+  max-width: 58ch;
+  margin-bottom: 14px;
+  color: #3B4A5A;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.diagnostic-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  padding: 34px;
+  border: 1px solid rgba(15, 42, 68, 0.08);
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.09);
+  text-align: left;
+}
+
+.diagnostic-field {
+  display: grid;
+  gap: 8px;
+}
+
+.diagnostic-field-full {
+  grid-column: 1 / -1;
+}
+
+.diagnostic-field label {
+  color: #0F2A44;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.diagnostic-field input,
+.diagnostic-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid #CBD5E1;
+  border-radius: 7px;
+  background: #FFFFFF;
+  color: #0F172A;
+  font: inherit;
+}
+
+.diagnostic-field input:focus,
+.diagnostic-field select:focus {
+  border-color: #16A34A;
+  outline: 3px solid rgba(34, 197, 94, 0.16);
+}
+
+.diagnostic-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #3B4A5A;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.diagnostic-consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: #16A34A;
+}
+
+.diagnostic-submit {
+  min-height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brand-action);
+  color: #FFFFFF;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.diagnostic-submit:hover {
+  background: var(--brand-action-hover);
+  transform: translateY(-2px);
+}
+
+.diagnostic-submit:focus-visible {
+  outline: 3px solid #0F2A44;
+  outline-offset: 3px;
+}
+
+.diagnostic-message {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.diagnostic-message--sending {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.diagnostic-message--success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.diagnostic-message--error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 1024px) {
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .diagnostic-intro {
+    position: static;
+  }
+
+  .diagnostic-intro h1 {
+    max-width: 18ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .diagnostic-section {
+    padding: 42px 16px 72px;
+  }
+
+  .diagnostic-intro h1 {
+    font-size: 2.35rem;
+  }
+
+  .diagnostic-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .diagnostic-field-full {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagnostic-submit {
+    transition: none;
+  }
+}

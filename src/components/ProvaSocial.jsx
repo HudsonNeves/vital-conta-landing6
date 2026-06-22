@@ -3,20 +3,19 @@ import '../styles/sections.css'
 function ProvaSocial() {
   const depoimentos = [
     {
-      nome: 'Carlos Mendes',
-      cargo: 'Empresário',
-      texto: 'Hoje tenho total clareza sobre minhas finanças. Consigo tomar decisões com muito mais segurança.',
+      nome: 'Além Mar',
+      cargo: 'Agência de Turismo',
+      texto: 'Recebemos todo o suporte estratégico necessário para a abertura da empresa. Uma parceria humana que transformou burocracia em soluções ágeis para começarmos do jeito certo.',
       socials: [
-        { name: 'linkedin', url: 'https://www.linkedin.com/in/carlosmendes' },
-        { name: 'instagram', url: 'https://www.instagram.com/carlosmendes' }
+        { name: 'instagram', url: 'https://www.instagram.com/alemar.tur?igsh=MWRta3ZvcHowaml2MQ==' }
       ]
     },
     {
-      nome: 'Além Mar Turismo',
-      cargo: 'Agência de Turismo',
-      texto: 'A organização que a Vital trouxe mudou completamente a forma como gerencio meu negócio.',
+      nome: 'FCK Engenharia',
+      cargo: 'Engenharia e Climatização',
+      texto: 'A equipe da Vital Conta nos deu um direcionamento muito prático e claro. Eles nos mostraram exatamente o caminho que precisávamos seguir para estruturar nossa identidade empresarial e organizar a imagem da nossa empresa.',
       socials: [
-        { name: 'instagram', url: 'https://www.instagram.com/alemar.tur?igsh=MWRta3ZvcHowaml2MQ==' }
+        { name: 'instagram', url: 'https://www.instagram.com/fck_engenhariaeclimatizacao' }
       ]
     }
   ]

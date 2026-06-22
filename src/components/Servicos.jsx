@@ -3,7 +3,7 @@ import '../styles/sections.css'
 function Servicos() {
   const categorias = [
     {
-      titulo: 'Eu não sei se minhas contas estão certas',
+      titulo: 'Quero formalizar meu negócio e não sei por onde começar.',
       descricao: 'Serviços que deixam sua rotina administrativa mais clara e fácil de acompanhar.',
       itens: [
         'Contabilidade explicada passo a passo',
@@ -12,11 +12,11 @@ function Servicos() {
       ]
     },
     {
-      titulo: 'Eu perco muito tempo com impostos e obrigações digitais',
+      titulo: 'Quero migrar de MEI para LTDA e preciso de orientação.',
       descricao: 'Recursos práticos para simplificar rotinas fiscais, acessos e entregas obrigatórias.',
       itens: [
         'Controle simples de notas fiscais',
-        'Orientação para uso do certificado digital'
+        'Emissão de Certificado Digital'
       ]
     },
     {

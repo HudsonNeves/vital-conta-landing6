@@ -1,5 +1,7 @@
 :root {
   --primary: #0F2A44;
+  --brand-action: #1F3D5C;
+  --brand-action-hover: #142E47;
   --white: #FFFFFF;
   --gray-dark: #3B4A5A;
   --gray-light: #EEF2F6;
@@ -12,10 +14,27 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
   background: var(--white);
   color: var(--primary);
   padding-top: 70px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role='button']:focus-visible {
+  outline: 3px solid #2563EB;
+  outline-offset: 3px;
 }
 
 section {
